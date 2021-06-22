@@ -3,9 +3,9 @@ const passport = require('passport');
 
 // The root route renders our only view
 router.get('/', function(req, res) {
-  // Where do you want to go for the root route
-  // in the student demo this was res.redirect('/students'), what do you want?
-  // maybe you just want to render something too
+  res.render('index', {
+    title: "Home Page"
+  })
 });
 
 // Google OAuth login route
@@ -18,7 +18,9 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/', // where do you want the client to go after you login 
+    successRedirect : '/users', // where do you want the client to go after you login 
+    // if success with new user, redirect to edit profile page
+    // if success with existing user, redirect to profile/index/home
     failureRedirect : '/' // where do you want the client to go if login fails
   }
 ));

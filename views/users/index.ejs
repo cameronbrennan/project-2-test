@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+
+<h3>This is where the User's Live</h3>
+
+
+<ul>
+    <% users.forEach(function(u) { %> 
+        <li><%= u.name %> </li>
+        <li><%= u.email %> </li>
+        <li><%= u.googleId %> </li>
+    <% }) %> 
+</ul>
+
+
+<%- include('../partials/footer') %>
