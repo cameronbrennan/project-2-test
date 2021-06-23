@@ -1,6 +1,6 @@
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
-const User = require("../models/user");
+const User = require("../models/User");
 
 // configuring Passport!
 passport.use(
@@ -12,7 +12,7 @@ passport.use(
     },
     function (accessToken, refreshToken, profile, cb) {
       User.findOne({ googleId: profile.id }, function (err, user) {
-        if (err) return cd(err);
+        if (err) return cb(err);
         if (user) {
           return cb(null, user);
         } else {
@@ -20,9 +20,10 @@ passport.use(
             name: profile.displayName,
             email: profile.emails[0].value,
             googleId: profile.id,
+            newLogin: true
           });
           newUser.save(function (err) {
-            if (err) return cd(err);
+            if (err) return cb(err);
             return cb(null, newUser);
           });
         }

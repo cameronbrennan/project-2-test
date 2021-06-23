@@ -6,16 +6,9 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
-
-// load the env vars
 require('dotenv').config();
-
-// create the Express app
 var app = express();
-
-// connect to the MongoDB with mongoose
 require('./config/database');
-// configure Passport
 require('./config/passport');
 
 const indexRouter = require('./routes/index');
@@ -37,12 +30,8 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
-
 app.use(passport.initialize());
 app.use(passport.session());
-
-
-// Add this middleware BELOW passport middleware
 app.use(function (req, res, next) {
   res.locals.user = req.user;
   next();

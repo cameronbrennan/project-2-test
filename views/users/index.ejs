@@ -2,14 +2,12 @@
 
 <h3>This is where the User's Live</h3>
 
-
 <ul>
-    <% users.forEach(function(u) { %> 
-        <li><%= u.name %> </li>
-        <li><%= u.email %> </li>
-        <li><%= u.googleId %> </li>
-    <% }) %> 
+  <% users.forEach(function(u) { %>
+  <li><a href="/users/<%= u._id %>"><%= u.username %></a></li>
+  <li><%= u.name %></li>
+  <li><%= u.email %></li>
+  <% }) %>
 </ul>
-
 
 <%- include('../partials/footer') %>

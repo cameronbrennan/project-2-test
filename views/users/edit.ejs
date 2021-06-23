@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<form id="update-user" method="POST" action="/users/<%=user._id%>?_method=PUT">
+  <input type="hidden" name="_method" value="PUT" />
+  <input
+    type="text"
+    placeholder="username"
+    name="username"
+    value="<%= user.username %> "
+  />
+  <input type="text" name="name" value="<%=user.name%>" />
+  <input type="text" name="email" value="<%=user.email%>" />
+  <input type="submit" value="Update Profile" />
+</form>
+
+<%- include('../partials/footer') %>

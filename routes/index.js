@@ -4,7 +4,7 @@ const passport = require('passport');
 // The root route renders our only view
 router.get('/', function(req, res) {
   res.render('index', {
-    title: "Home Page"
+    title: "Welcome to Rocket League Hub!"
   })
 });
 
