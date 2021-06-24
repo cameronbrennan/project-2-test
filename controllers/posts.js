@@ -22,14 +22,16 @@ function index(req, res) {
 // get a single post
 function show(req, res) {
   Post.findById(req.params.id)
-    .populate("comments")
+    .populate("author comments.author")
     .exec(function (err, post) {
       const isMyPost = post.author.equals(req.user._id);
+      const isMyComment = post.comment.author.equals(req.user._id);
       console.log(post);
       res.render("posts/show", {
         title: "Post Details",
         post,
         isMyPost,
+        isMyComment
       });
     });
 }

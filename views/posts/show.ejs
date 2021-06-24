@@ -19,6 +19,7 @@
 </div>
 
 <div><%= post.title %></div>
+<div><%= post.author.username %> </div>
 <div><%= post.articleBody %></div>
 <div><%= post.link %></div>
 
@@ -36,12 +37,14 @@
   <div>
     <% post.comments.forEach(function(c){ %>
     <div>
-      <h3><%= c.author %></h3>
+      <h3><%= c.author.username %></h3>
       <p><%= c.content %></p>
     </div>
     <% }) %>
   </div>
-  <% } %>
+  <% } else { %>
+    <h3>No Comments Yet</h3>
+  <% } %> 
 </div>
 
 <%- include('../partials/footer') %>
