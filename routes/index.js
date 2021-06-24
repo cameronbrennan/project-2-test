@@ -18,7 +18,7 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/posts', // where do you want the client to go after you login 
+    successRedirect : '/users', // where do you want the client to go after you login 
     // if success with new user, redirect to edit profile page
     // if success with existing user, redirect to profile/index/home
     failureRedirect : '/' // where do you want the client to go if login fails
