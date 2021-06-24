@@ -25,13 +25,11 @@ function show(req, res) {
     .populate("author comments.author")
     .exec(function (err, post) {
       const isMyPost = post.author.equals(req.user._id);
-      const isMyComment = post.comment.author.equals(req.user._id);
       console.log(post);
       res.render("posts/show", {
         title: "Post Details",
         post,
         isMyPost,
-        isMyComment
       });
     });
 }

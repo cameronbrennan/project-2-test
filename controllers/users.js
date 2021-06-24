@@ -10,7 +10,7 @@ module.exports = {
 function index(req, res) {
   User.find({}, function (err, users) {
     if (req.user.newLogin === true) {
-      res.redirect("/users/edit");
+      res.redirect("/posts");
     } else {
       res.render("users/index", {
         title: "Index of Players",
