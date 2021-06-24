@@ -1,4 +1,47 @@
 <%- include('../partials/header') %>
 
+<h3>Post Details</h3>
+<div>
+  <% if(isMyPost) { %>
+  <div><a href="/posts/edit">Edit Post</a></div>
+  <div>
+    <form
+      id="delete-post"
+      method="POST"
+      action="/posts/<%=post._id%>?_method=DELETE"
+    >
+      <input type="hidden" name="_method" value="DELETE" />
+      <input type="submit" value="Delete this Post" />
+    </form>
+  </div>
+
+  <% }%>
+</div>
+
+<div><%= post.title %></div>
+<div><%= post.articleBody %></div>
+<div><%= post.link %></div>
+
+<div>
+  <form
+    id="create-comment"
+    method="POST"
+    action="/posts/<%=post._id%>/comments"
+  >
+    <textarea id="content" name="content" rows="5"></textarea>
+    <input type="submit" value="Add Comment" />
+  </form>
+
+  <% if(post.comments.length) { %>
+  <div>
+    <% post.comments.forEach(function(c){ %>
+    <div>
+      <h3><%= c.author %></h3>
+      <p><%= c.content %></p>
+    </div>
+    <% }) %>
+  </div>
+  <% } %>
+</div>
 
 <%- include('../partials/footer') %>

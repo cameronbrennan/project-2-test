@@ -10,7 +10,7 @@ module.exports = {
 function index(req, res) {
   User.find({}, function (err, users) {
     if (req.user.newLogin === true) {
-        res.redirect('/users/edit')
+      res.redirect("/users/edit");
     } else {
       res.render("users/index", {
         title: "Index of Players",
@@ -22,13 +22,13 @@ function index(req, res) {
 
 function show(req, res) {
   User.findById(req.params.id, function (err, user) {
-      console.log(user.id, req.user.id);
-    const isMyUser = (user.id === req.user.id);
+    console.log(user.id, req.user.id);
+    const isMyUser = user.id === req.user.id;
     console.log(isMyUser);
     res.render("users/show", {
       title: "User Profile",
       user,
-      isMyUser
+      isMyUser,
     });
   });
 }
@@ -36,7 +36,11 @@ function show(req, res) {
 function update(req, res) {
   console.log("Update");
   User.findById(req.params.id, function (err, user) {
-    user.username = req.body.username;
+    if (req.body.username) {
+      user.username = req.body.username;
+    } else {
+      user.username = req.body.email;
+    }
     user.name = req.body.name;
     user.email = req.body.email;
     user.newLogin = false;
@@ -50,7 +54,7 @@ function update(req, res) {
 function edit(req, res) {
   res.render("users/edit", {
     title: "Update your Profile!",
-    user: req.user
+    user: req.user,
   });
 }
 // Delete a User

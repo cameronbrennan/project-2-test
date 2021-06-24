@@ -12,13 +12,18 @@ const userSchema = new mongoose.Schema(
     name: {
       type: String,
       max: 50,
+      required: true
     },
     email: {
       type: String,
       min: 10,
-      max: 150
+      max: 150,
+      required: true
     },
-    googleId: String,
+    googleId: {
+      type: String,
+      required: true
+    },
     isAdmin: {
       type: Boolean,
       default: false,

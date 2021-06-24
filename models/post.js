@@ -1,37 +1,49 @@
+const { TooManyRequests } = require("http-errors");
 const mongoose = require("mongoose");
 
 const commentSchema = new mongoose.Schema ({
   content: {
     type: String,
-    max: 500,
+    max: 5000,
     min: 1,
     Default: ""
   },
   author: {
-    type: mongoose.Schema.Types.ObjectId, ref: "User"
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true
   }
+}, {
+  timestamps: true
 });
 
 const postSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    max: 250,
+    min: 5,
+    default: "Untitled"
+  },
   author: {
-    type: mongoose.Schema.Types.ObjectId, ref: "User",
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
     required: true,
   },
   articleBody: {
     type: String,
-    max: 2500,
+    max: 10000,
     min: 1,
     default: ""
   },
-  description: {
+  link: {
     type: String,
+    required: false,
   },
   comments: {
     type: [commentSchema]
-  },
-  likes: {
-    type: Array,
-  },
+  }
+}, {
+  timestamps: true
 });
 
 module.exports = mongoose.model("Post", postSchema);

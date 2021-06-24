@@ -5,6 +5,7 @@ const postsCtrl = require("../controllers/posts");
 router.get("/", isLoggedIn, postsCtrl.index);
 router.get("/edit", isLoggedIn, postsCtrl.edit);
 router.get("/new", isLoggedIn, postsCtrl.new);
+router.post("/", isLoggedIn, postsCtrl.create);
 router.put("/:id", isLoggedIn, postsCtrl.update);
 router.get("/:id", isLoggedIn, postsCtrl.show);
 router.delete("/:id", isLoggedIn, postsCtrl.delete);
