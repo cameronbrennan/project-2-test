@@ -47,6 +47,10 @@ ul {
   text-align: center;
 }
 
+li {
+  text-align: center;
+}
+
 .top-bar {
   display: grid;
   grid-template-areas: 

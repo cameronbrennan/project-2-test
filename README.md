@@ -16,10 +16,10 @@ When you first log in to Rocket League Hub as a new user, you will be prompted t
 
 #### App Screenshots
 
-<img src = "" alt = "" width = "640" height = "360">
-<img src = "" alt = "" width = "640" height = "360">
-<img src = "" alt = "" width = "640" height = "360">
-<img src = "" alt = "" width = "640" height = "360">
+<img src = "ERD.png" alt = "ERD" width = "640" height = "360">
+<img src = "RLH-post-index.png" alt = "Posts Index" width = "640" height = "360">
+<img src = "RLH-post-show.png" alt = "Post show" width = "640" height = "360">
+<img src = "RLH-profile-view" alt = "User show" width = "640" height = "360">
 
 #### Next Steps
 
