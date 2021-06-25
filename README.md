@@ -4,8 +4,8 @@ Rocket League Hub is a web app in development to act as something of a social ne
 
 ## Technologies Used 
 
-1. Stack Technologies: Node.JS, Express, MongoDB, Mongoose, PassportJS, Method Override, JavaScript, HTML, CSS
-2. Trello (https://trello.com/b/Hs806CXj)
+1. Stack Technologies: Node.JS, Express, MongoDB, Mongoose, PassportJS, Method Override
+2. Trello
 3. LucidChart
 
 
