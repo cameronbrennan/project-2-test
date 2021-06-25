@@ -1,7 +1,6 @@
 # Rocket League Hub
 
-
-This is your passport boilerplate.
+Rocket League Hub is a web app in development to act as something of a social network for fans of the Psyonix developed game Rocket League! Additional features will include events planning, and additional Nav items that will direct to popular rocket league content creators as well as training videos!
 
 ## Technologies Used 
 
