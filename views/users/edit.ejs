@@ -1,18 +1,26 @@
 <%- include('../partials/header') %>
-
 <form id="update-user" method="POST" action="/users/<%=user._id%>?_method=PUT">
   <input type="hidden" name="_method" value="PUT" />
-  <input
-    type="text"
-    placeholder="username"
-    name="username"
-    <% if(user.username) { %> 
-    value="<%= user.username %>"
-    <% } %> 
-  />
-  <input type="text" name="name" value="<%=user.name%>" />
-  <input type="text" name="email" value="<%=user.email%>" />
-  <input type="submit" value="Update Profile" />
+  <div>
+    <p>Username: </p>
+    <input
+      type="text"
+      placeholder="username"
+      name="username"
+      <%if(user.username){%>
+      value="<%= user.username %>"
+      <% } %> />
+  </div>
+  <div>
+    <p>Your Name: </p>
+    <input type="text" name="name" value="<%=user.name%>" />
+  </div>
+  <div>
+    <p>Your Email</p>
+    <input type="text" name="email" value="<%=user.email%>" />
+  </div>
+  <div>
+    <input type="submit" value="Update Profile" />
+  </div>
 </form>
-
 <%- include('../partials/footer') %>

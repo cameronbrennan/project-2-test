@@ -1,4 +1,14 @@
 <%- include('../partials/header') %>
-
-
+<h1>Edit Your Post</h1>
+<form id="update-post" method="POST" action="/posts/<%=post._id%>?_method=PUT">
+    <input type="hidden" name="_method" value="PUT" />
+  <div>
+    <input type="text" placeholder="Post Title" name="title" value="<%= post.title %> " />
+  </div>
+  <div>
+    <textarea id="articleBody" name="articleBody" rows="5" value="<%= post.articleBody %> "></textarea>
+  </div>
+  <div><input type="text" name="link" placeholder="Paste Your Link!" value="<%= post.link %> " /></div>
+  <div><input type="submit" value="Submit Post" /></div>
+</form>
 <%- include('../partials/footer') %>

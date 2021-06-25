@@ -1,13 +1,9 @@
 <%- include('../partials/header') %>
-
-<h3>This is where the Posts Live</h3>
-
+<h3>All Posts</h3>
 <a href="/posts/new"><input type="button" value="Create a New Post!" /></a>
-
 <ul>
   <% posts.forEach(function(p) { %>
   <li><a href="/posts/<%= p._id %>"><%= p.title %></a></li>
   <% }) %>
 </ul>
-
 <%- include('../partials/footer') %>

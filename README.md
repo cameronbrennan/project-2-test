@@ -1,34 +1,31 @@
-# passport-boilerplate
+# Rocket League Hub
 
 
 This is your passport boilerplate.
 
-## Setup 
+## Technologies Used 
 
-1. Clone the repo
-2. Rename the folder to your Project
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+1. Stack Technologies: Node.JS, Express, MongoDB, Mongoose, PassportJS, Method Override
+2. Trello
+3. LucidChart
 
 
-#### Setup your git repo
-1. in the project root `git init`
-2. `git add .` to add all the starter code
-3. `git commit -m "setup boilerplate"` 
-4. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-5. copy the remote address
-6. In your terminal add the remote `git remote add origin yourGithubRepo'sAddressGoesHere`
-7. `git pull origin master` If a screen pulls up asking you to do something just press `:q` and then `enter` (thats vim btw :) )
-8. `git push origin master`
+#### Getting Started with Rocket League Hub
 
-#### Setup your login
+When you first log in to Rocket League Hub as a new user, you will be prompted to the edit profile screen where you will enter your profile Username and confirm the name and email address retrieved from your google login. Once you're in the site, you can view and edit your own profile or posts, and view all other public facing user profiles and posts, as well as add comments to the posts themselves. It's a fairly simple start to the app right now, but with further development and the future implementation of a front-end website, this app will be able to function as a social hub for fans of the Psyonix game Rocket League
 
-0. Setup your database connection string
-1. Then Setup Your User Model, 
-2. Follow the steps from the lesson plan to get your Google login credentials for your `.env` file (create the file if you haven't), or you can just copy the ones from earlier if you want to reuse them.
-3. Setup the Code in your config passport 
-4. Setup your callback routes in your `routes/index`
-5. Setup a view and test your login!
+#### App Screenshots
 
-#### Make a commit 
+<img src = "" alt = "" width = "640" height = "360">
+<img src = "" alt = "" width = "640" height = "360">
+<img src = "" alt = "" width = "640" height = "360">
+<img src = "" alt = "" width = "640" height = "360">
 
-```git commit -m "setup up oauth and User Model"```
+#### Next Steps
+
+0. Style embedded links for in page playback
+1. Streamline the user index and add a search function to look for specific users
+2. Allow users to create, edit, and respond to events
+3. Setup a "home" page, which will show recent and relevent posts and events to the logged in user 
+4. Add "upvote/downvote" system for tracking user response to specific posts and events
+5. Add a new page and relevant nav for content creators and training videos

@@ -1,9 +1,8 @@
 <%- include('../partials/header') %>
-
 <h3>Post Details</h3>
 <div>
   <% if(isMyPost) { %>
-  <div><a href="/posts/edit">Edit Post</a></div>
+  <div><a href="/posts/<%= post._id %>/edit">Edit Post</a></div>
   <div>
     <form
       id="delete-post"
@@ -14,15 +13,12 @@
       <input type="submit" value="Delete this Post" />
     </form>
   </div>
-
   <% }%>
 </div>
-
 <div><%= post.title %></div>
 <div><%= post.author.username %> </div>
 <div><%= post.articleBody %></div>
 <div><%= post.link %></div>
-
 <div>
   <form
     id="create-comment"
@@ -32,7 +28,6 @@
     <textarea id="content" name="content" rows="5"></textarea>
     <input type="submit" value="Add Comment" />
   </form>
-
   <% if(post.comments.length) { %>
   <div>
     <% post.comments.forEach(function(c){ %>
@@ -46,5 +41,4 @@
     <h3>No Comments Yet</h3>
   <% } %> 
 </div>
-
 <%- include('../partials/footer') %>

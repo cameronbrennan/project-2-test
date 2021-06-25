@@ -1,5 +1,4 @@
 const Post = require("../models/Post");
-
 module.exports = {
   index,
   show,
@@ -9,7 +8,6 @@ module.exports = {
   update,
   delete: deletePost,
 };
-
 // index of all posts
 function index(req, res) {
   Post.find({}, function (err, posts) {
@@ -25,7 +23,6 @@ function show(req, res) {
     .populate("author comments.author")
     .exec(function (err, post) {
       const isMyPost = post.author.equals(req.user._id);
-      console.log(post);
       res.render("posts/show", {
         title: "Post Details",
         post,
@@ -54,15 +51,21 @@ function create(req, res) {
 }
 // edit an existing post
 function edit(req, res) {
-  res.render("posts/edit", {
-    title: "Update your Post",
-    user: req.user,
+  Post.findById(req.params.id, function(err, post){
+    res.render("posts/edit", {
+        title: "Update your Post",
+        user: req.user,
+        post
+      });
   });
 }
 // update a post
 function update(req, res) {
   console.log("Update");
   Post.findById(req.params.id, function (err, post) {
+    post.title = req.body.title;
+    post.articleBody = req.body.articleBody;
+    post.link = req.body.link;
     post.save(function (err) {
       res.redirect(`/posts/${post._id}`);
     });
