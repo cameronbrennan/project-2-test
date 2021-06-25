@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .brand-logo {
   margin-left: 15px;
 }
@@ -19,10 +23,53 @@
   margin-top: -5px;
 }
 
+body {
+  margin: 0;
+  font-family: futura;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(#FC540C, whitesmoke);
+  text-align: center;
+}
+
+header {
+  font-weight: bolder;
+  vertical-align: top;
+  font-weight: bolder;
+  font-size: 60px;
+  grid-area: header;
+  color: whitesmoke
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.top-bar {
+  display: grid;
+  grid-template-areas: 
+  "header nav";
+  background-color: #06167f;
+}
+
 .nav-list {
   display: inline-flex;
   vertical-align: top;
+  align-self: right;
   list-style-type: none;
+  background-color: #06167f;
+  color: whitesmoke;
+  height: fit-content;
+  font-size: 36px;
+  grid-area: nav;
+  width: 100vw;
+  align-items: right;
+}
+
+.nav-list a {
+  color: white;
 }
 
 .nav-list li {

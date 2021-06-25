@@ -15,10 +15,10 @@
   </div>
   <% }%>
 </div>
-<div><%= post.title %></div>
-<div><%= post.author.username %> </div>
+<div>Title: <%= post.title %></div>
+<div>Created By: <%= post.author.username %> </div>
 <div><%= post.articleBody %></div>
-<div><%= post.link %></div>
+<div><a href="<%= post.link %>" target="_blank">Link</a></div>
 <div>
   <form
     id="create-comment"
